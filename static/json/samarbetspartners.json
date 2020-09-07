@@ -1,0 +1,31 @@
+[{
+        "namn": "Helmo Stables",
+        "länk": "https://www.helmostables.com/",
+        "beskrivning": "Samarbetspartner - Helmo Stables logotyp",
+        "bild": "../static/img/helmo_stables.webp"
+    },
+    {
+        "namn": "Horse Partner",
+        "länk": "https://www.horsepartner.se/",
+        "beskrivning": "Samarbetspartner - Horse Partners logotyp",
+        "bild": "../static/img/horse_partner.webp"
+    },
+    {
+        "namn": "Maskin Companiet",
+        "länk": "https://maskincompaniet.se/",
+        "beskrivning": "Samarbetspartner - Maskin Companiets logotyp",
+        "bild": "../static/img/maskin_companiet.webp"
+    },
+    {
+        "namn": "Sellamigo",
+        "länk": "https://sellamigo.se/",
+        "beskrivning": "Samarbetspartner -Sellamigos logotyp",
+        "bild": "../static/img/sellamigo.webp"
+    },
+    {
+        "namn": "Stall Linell",
+        "länk": "https://www.facebook.com/pages/category/Sports---Recreation/Stall-Linell-245726982130752/",
+        "beskrivning": "Samarbetspartner - Stall Linells logotyp",
+        "bild": ""
+    }
+]

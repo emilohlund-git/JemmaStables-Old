@@ -1,0 +1,33 @@
+[{
+        "namn": "Häst #1",
+        "född": "1111",
+        "kön": "1111",
+        "färg": "1111",
+        "bild": "../static/img/hästar/horse1.webp",
+        "beskrivning": "Bild på häst #9"
+    },
+    {
+        "namn": "Häst #2",
+        "född": "1111",
+        "kön": "1111",
+        "färg": "1111",
+        "bild": "../static/img/hästar/horse2.webp",
+        "beskrivning": "Bild på häst #9"
+    },
+    {
+        "namn": "Häst #3",
+        "född": "1111",
+        "kön": "1111",
+        "färg": "1111",
+        "bild": "../static/img/hästar/horse3.webp",
+        "beskrivning": "Bild på häst #9"
+    },
+    {
+        "namn": "Häst #4",
+        "född": "1111",
+        "kön": "1111",
+        "färg": "1111",
+        "bild": "../static/img/hästar/horse4.webp",
+        "beskrivning": "Bild på häst #9"
+    }
+]

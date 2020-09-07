@@ -1,0 +1,19 @@
+{
+    "name": "Jemma Stables",
+    "short_name": "Jemma Stables",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#000",
+    "description": "Hemsida för Jemma Stables stall & hästverksamhet.",
+    "theme_color": "#000",
+    "icons": [{
+        "src": "../manifest-icon196x196.png",
+        "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "any maskable"
+    }, {
+        "src": "../android-chrome-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }]
+}
