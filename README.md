@@ -1,1 +1,1 @@
-![Image of website header](https://ibb.co/nkBhmjw)
+![Image of website header](https://i.ibb.co/0JKP2rn/Jemma-Stables.jpg)
