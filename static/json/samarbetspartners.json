@@ -1,31 +1,36 @@
 [{
         "namn": "Helmo Stables",
         "länk": "https://www.helmostables.com/",
-        "beskrivning": "Samarbetspartner - Helmo Stables logotyp",
-        "bild": "../static/img/helmo_stables.webp"
+        "alt": "Samarbetspartner - Helmo Stables logotyp",
+        "bild": "../static/img/helmo_stables.png",
+        "beskrivning": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolor, iusto totam suscipit dolorem saepe."
     },
     {
         "namn": "Horse Partner",
         "länk": "https://www.horsepartner.se/",
-        "beskrivning": "Samarbetspartner - Horse Partners logotyp",
-        "bild": "../static/img/horse_partner.webp"
+        "alt": "Samarbetspartner - Horse Partners logotyp",
+        "bild": "../static/img/horse_partner.png",
+        "beskrivning": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolor, iusto totam suscipit dolorem saepe."
     },
     {
         "namn": "Maskin Companiet",
         "länk": "https://maskincompaniet.se/",
-        "beskrivning": "Samarbetspartner - Maskin Companiets logotyp",
-        "bild": "../static/img/maskin_companiet.webp"
+        "alt": "Samarbetspartner - Maskin Companiets logotyp",
+        "bild": "../static/img/maskin_companiet.png",
+        "beskrivning": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolor, iusto totam suscipit dolorem saepe."
     },
     {
         "namn": "Sellamigo",
         "länk": "https://sellamigo.se/",
-        "beskrivning": "Samarbetspartner -Sellamigos logotyp",
-        "bild": "../static/img/sellamigo.webp"
+        "alt": "Samarbetspartner -Sellamigos logotyp",
+        "bild": "../static/img/sellamigo.png",
+        "beskrivning": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolor, iusto totam suscipit dolorem saepe."
     },
     {
         "namn": "Stall Linell",
         "länk": "https://www.facebook.com/pages/category/Sports---Recreation/Stall-Linell-245726982130752/",
-        "beskrivning": "Samarbetspartner - Stall Linells logotyp",
-        "bild": ""
+        "alt": "Samarbetspartner - Stall Linells logotyp",
+        "bild": "",
+        "beskrivning": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolor, iusto totam suscipit dolorem saepe."
     }
 ]

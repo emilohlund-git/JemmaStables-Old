@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Emil Öhlund">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <link rel="manifest" href="/manifest.webmanifest">
@@ -52,11 +53,15 @@
     <!-- NAVIGATION -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top transparent">
         <div class="container-fluid">
-            <a href="index.html" class="navbar-brand"><img id="logo" src="/static/img/Jemma_stables.webp" alt="Logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="white-text"><i class="fas fa-bars fa-1x"></i></span></button>
+            <a href="index.html" class="navbar-brand"><img id="logo" src="/static/img/Jemma_stables.png" alt="Logo"></a>
+            <!-- COLLAPSIBLE BUTTON -->
+            <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="animated-icon1"><span></span><span></span><span></span></div>
+            </button>
+            <!-- COLLAPSIBLE CONTENT -->
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav mr-auto">
+                <!-- LINKS -->
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Startsida <span class="sr-only">(current)</span></a>
                     </li>
@@ -67,6 +72,7 @@
                         <div class="dropdown-menu sm-menu">
                             <a class="dropdown-item" href="../anläggningen/stallet.html">Stallet</a>
                             <a class="dropdown-item" href="../anläggningen/lösdriften.html">Lösdriften</a>
+                            <a class="dropdown-item" href="../anläggningen/hagarna.html">Hagarna</a>
                             <a class="dropdown-item" href="../anläggningen/ridbanan.html">Ridbanan</a>
                         </div>
                     </li>
@@ -81,13 +87,16 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/om.html">Om Jemma Stables</a>
+                        <a class="nav-link" href="/kontakt.html">Kontakta oss</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/bokning.html">Bokning</a>
+                        <a class="nav-link" href="/bokning.html">Bokning av ridbana</a>
                     </li>
-                </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/samarbetspartners.html">Samarbetspartners</a>
+                    </li>
             </div>
+        </div>
         </div>
     </nav>
     <!-- CONTENT -->
@@ -133,11 +142,17 @@
         var token;
         var feed = new Instafeed({
             accessToken: InstagramToken,
+            resolution: 'thumbnail',
             template: '<div class="col-lg-3 col-md-4 col-xs-6 thumb"><a href="{{link}}" target="_blank"><figure><img class="img-fluid img-thumbnail" src="{{image}}"></a></figure></div>',
             sortBy: 'most-recent',
             limit: 8,
             filter: function(image) {
-                return image.tags.indexOf("JEMMAstables") >= 0;
+                let images = [];
+                for (i = 0; i < image.tags.length; i++) {
+                    if (image.tags[i].toLowerCase() == document.getElementById("häst").innerHTML.replace(/ /g, '').toLowerCase()) {
+                        return image;
+                    }
+                }
             }
         });
         feed.run();

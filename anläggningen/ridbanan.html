@@ -41,7 +41,6 @@
     <!-- CUSTOM JS-->
     <script src="../static/js/register-sw.js"></script>
     <script src="../static/js/custom.js"></script>
-    <script src="../static/js/gallery.js"></script>
 
     <title>Jemma Stables - Ridbanan</title>
     <meta name="description" content="Översikt över Jemma Stables ridbana">
@@ -52,11 +51,15 @@
     <!-- NAVIGATION -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top transparent">
         <div class="container-fluid">
-            <a href="../index.html" class="navbar-brand"><img id="logo" src="../static/img/Jemma_stables.webp" alt="Logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="white-text"><i class="fas fa-bars fa-1x"></i></span></button>
+            <a href="../index.html" class="navbar-brand"><img id="logo" src="../static/img/Jemma_stables.png" alt="Logo"></a>
+            <!-- COLLAPSIBLE BUTTON -->
+            <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="animated-icon1"><span></span><span></span><span></span></div>
+            </button>
+            <!-- COLLAPSIBLE CONTENT -->
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav mr-auto">
+                <!-- LINKS -->
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Startsida <span class="sr-only">(current)</span></a>
                     </li>
@@ -67,6 +70,7 @@
                         <div class="dropdown-menu sm-menu">
                             <a class="dropdown-item" href="../anläggningen/stallet.html">Stallet</a>
                             <a class="dropdown-item" href="../anläggningen/lösdriften.html">Lösdriften</a>
+                            <a class="dropdown-item" href="../anläggningen/hagarna.html">Hagarna</a>
                             <a class="dropdown-item" href="../anläggningen/ridbanan.html">Ridbanan</a>
                         </div>
                     </li>
@@ -81,13 +85,16 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../om.html">Om Jemma Stables</a>
+                        <a class="nav-link" href="../kontakt.html">Kontakta oss</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../bokning.html">Bokning</a>
+                        <a class="nav-link" href="../bokning.html">Bokning av ridbana</a>
                     </li>
-                </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../samarbetspartners.html">Samarbetspartners</a>
+                    </li>
             </div>
+        </div>
         </div>
     </nav>
     <!-- CONTENT -->
@@ -108,39 +115,28 @@
                 <hr>
             </div>
             <div class="col-12">
-                <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur recusandae deleniti suscipit blanditiis assumenda molestias!</h6>
-                <h6>Klicka på namnet på en häst för mer information</h6>
+                <p>Precis utanför stallet finns det en ridbana med måtten 70x35m. Ridbanan är anlagd av Maskincompaniet som även har levererat fibersanden. Runt ridbanan sitter av säkerhetskäl ett plaststaket som ger med sig om det skulle ske en olycka.
+                    Under årets mörkare månader samt kvällstid finns det tillfreddställande belysning i form av LED-strålkastare på stolpar som ger minimal skuggkastning.</p>
+                <p> Med hänsyn det geografiska läget med medföljande milda vintrar och periodvis stor nederbörd är banan väldränerad för att kunna nyttjas nästintill året runt. Bevattning tas från en vattentank på 8000 liter som kan tömmas varannan dag (vilket
+                    behövs under torrperiod). I direkt anslutning till ridbanan finns en stor uppgrusad parkering anpassad för tyngre fordon så att ekipaget snabbt och enkelt kan ta sig till och från banan utan att trängas.</p>
             </div>
-            <!--Carousel Wrapper-->
-            <div id="carousel-example-2" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
-                <!--Indicators-->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-                </ol>
-                <!--/.Indicators-->
-                <!--Slides-->
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                        <div class="view">
-                            <img class="d-block w-100" src="../static/img/anläggning/ridbana.webp" id="carousel-image" alt="Ridbanan">
-                            <div class="mask rgba-black-light"></div>
-                        </div>
-                    </div>
-                </div>
-                <!--/.Slides-->
-                <!--Controls-->
-                <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-                <!--/.Controls-->
-            </div>
-            <!--/.Carousel Wrapper-->
         </div>
+    </div>
+    <!--Carousel Wrapper-->
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="../static/img/anläggning/ridbana.png" alt="Bild på våran ridbana">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
     <!-- Footer -->
     <footer class="page-footer font-small cyan darken-3">

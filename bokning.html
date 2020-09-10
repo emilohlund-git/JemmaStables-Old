@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Emil Öhlund">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
     <link rel="manifest" href="/manifest.webmanifest">
@@ -26,7 +27,7 @@
         })(window, document, 'script', 'dataLayer', 'GTM-M76KP62');
     </script>
     <!-- End Google Tag Manager -->
-    <link rel="icon" href="../android-chrome-512x512.png">
+    <link rel="icon" href="/android-chrome-512x512.png">
 
     <!-- BOOTSTRAP CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -34,23 +35,17 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="../static/css/main.css">
     <link rel="stylesheet" href="../static/css/CalendarPicker.css">
     <!-- CUSTOM JS-->
-    <script src="static/js/register-sw.js"></script>
+    <script src="../static/js/register-sw.js"></script>
     <script src="../static/js/custom.js"></script>
     <script src="../static/js/CalendarPicker.js"></script>
-    <script src="../static/js/firestore.js"></script>
     <script src="../static/js/bokning.js"></script>
+
     <title>Jemma Stables - Boka tid på ridbanan</title>
     <meta name="description" content="Boka en tid på våran ridbana via den här bokningskalendern">
 </head>
@@ -59,22 +54,27 @@
     <!-- NAVIGATION -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top transparent">
         <div class="container-fluid">
-            <a href="index.html" class="navbar-brand"><img id="logo" src="/static/img/Jemma_stables.webp" alt="Logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="white-text"><i class="fas fa-bars fa-1x"></i></span></button>
+            <a href="index.html" class="navbar-brand"><img id="logo" src="/static/img/Jemma_stables.png" alt="Logo"></a>
+            <!-- COLLAPSIBLE BUTTON -->
+            <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="animated-icon1"><span></span><span></span><span></span></div>
+            </button>
+            <!-- COLLAPSIBLE CONTENT -->
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav mr-auto">
+                <!-- LINKS -->
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Startsida <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/index.html">Startsida <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown dmenu">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                             Anläggningen
                         </a>
                         <div class="dropdown-menu sm-menu">
-                            <a class="dropdown-item" href="../anläggningen/stallet.html">Stallet</a>
-                            <a class="dropdown-item" href="../anläggningen/lösdriften.html">Lösdriften</a>
-                            <a class="dropdown-item" href="../anläggningen/ridbanan.html">Ridbanan</a>
+                            <a class="dropdown-item" href="/anläggningen/stallet.html">Stallet</a>
+                            <a class="dropdown-item" href="/anläggningen/lösdriften.html">Lösdriften</a>
+                            <a class="dropdown-item" href="/anläggningen/hagarna.html">Hagarna</a>
+                            <a class="dropdown-item" href="/anläggningen/ridbanan.html">Ridbanan</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown dmenu">
@@ -82,80 +82,103 @@
                             Hästar
                         </a>
                         <div class="dropdown-menu sm-menu">
-                            <a class="dropdown-item" href="../hästar/tävlingshästar.html">Tävlingshästar</a>
-                            <a class="dropdown-item" href="../hästar/unghästar.html">Unghästar</a>
-                            <a class="dropdown-item" href="../hästar/avelsto.html">Avelsto</a>
+                            <a class="dropdown-item" href="/hästar/tävlingshästar.html">Tävlingshästar</a>
+                            <a class="dropdown-item" href="/hästar/unghästar.html">Unghästar</a>
+                            <a class="dropdown-item" href="/hästar/avelsto.html">Avelsto</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../om.html">Om Jemma Stables</a>
+                        <a class="nav-link" href="/kontakt.html">Kontakta oss</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/bokning.html">Bokning</a>
+                        <a class="nav-link" href="/bokning.html">Bokning av ridbana</a>
                     </li>
-                </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/samarbetspartners.html">Samarbetspartners</a>
+                    </li>
             </div>
+        </div>
         </div>
     </nav>
     <!-- CONTENT -->
     <div class="container" id="häst-container-2">
         <div class="row">
             <div class="col-12">
-                <h1>BOKNING</h1>
+                <h1>Tidsbokning av ridbana</h1>
                 <hr>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div id="myCalendarWrapper">
+    <div class="container" id="boknings-container">
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <div id="myCalendarWrapper">
 
+                </div>
+            </div>
+            <div class="col-md-1" id="navigation-wrapper">
+                <div class="row">
+                    <i class="fas fa-long-arrow-alt-up" id="previous-month"></i>
+                </div>
+                <div class="row">
+                    <i class="fas fa-long-arrow-alt-down" id="next-month"></i>
+                </div>
+            </div>
+            <div class="col-md-1" id="horizontal-arrows">
+                <i class="fas fa-arrow-circle-left" id="previous-month-horizontal"></i>
+                <i class="fas fa-arrow-circle-right float-right" id="next-month-horizontal"></i>
+            </div>
+            <div class="col-md-2 col-sm-12" id="förklarings-ruta">
+                <h6>Är färgen <a class="röd-text" data-toggle="tooltip" data-html="true" title="Tider på den här dagen är designerade för ridlektioner."><b>röd?</b></a></h6>
+                <p></p>
+                <h6>Är färgen <a data-toggle="tooltip" data-html="true" title="Då gäller självhushållning med hinder."><b>vit?</b></a></a>
+                </h6>
+                <p></p>
+                <h6>Är färgen <a class="grön-text" data-toggle="tooltip" data-html="true" title="Färdigbyggd bana finns upplagd att träna på."><b>grön?</b></a></h6>
+            </div>
         </div>
     </div>
 
     <!-- Lediga tider popup -->
     <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
+        <div class="modal-dialog modal-dialog-centered rounded-0" role="document">
+            <div class="modal-content rounded-0">
+                <div class="modal-header rounded-0">
                     <h5 class="modal-title" id="modal-title">Lediga tider:</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                    </button>
                 </div>
-                <div class="modal-body" id="modal-body">
+                <div class="modal-body rounded-0" id="modal-body">
                     <div class="form-group">
-                        <select class="form-control" id="sel1">
-                        </select>
+                        <div class="list-group" id="sel1" placeholder="Välj en tid">
+                        </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer rounded-0">
                     <button type="button" class="btn btn-primary" id="boka-knapp">Boka den här tiden</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" id="stäng-knapp">Stäng</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" tabindex="-1" role="dialog" id="myModal2">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
+    <div class="modal fade rounded-0" tabindex="-1" role="dialog" id="myModal2">
+        <div class="modal-dialog modal-dialog-centered rounded-0" role="document">
+            <div class="modal-content rounded-0">
+                <div class="modal-header rounded-0">
                     <h5 class="modal-title" id="modal-title2">Fyll i information:</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                    </button>
                 </div>
-                <div class="modal-body" id="modal-body2">
-                    <div class="form-group">
+                <div class="modal-body rounded-0" id="modal-body2">
+                    <form class="form-group rounded-0" id="booking-form">
                         <!-- CONTACT FORM -->
                         <div id="frmContact">
                             <div id="mail-status"></div>
-                            <div>
-                                <label style="padding-top:20px;">Namn</label><span id="userName-info" class="info"></span><br/>
-                                <input type="text" name="userName" id="userName" class="form-control">
+                            <div class="form-group">
+                                <input type="text" name="userName" id="userName" class="form-control" required>
+                                <label for="userName">Namn</label>
                             </div>
-                            <div>
-                                <label>Email</label><span id="userEmail-info" class="info"></span><br/>
-                                <input type="text" name="userEmail" id="userEmail" class="form-control">
+                            <div class="form-group">
+                                <input type="text" name="userEmail" id="userEmail" class="form-control" required>
+                                <label for="userEmail">Email</label>
                             </div>
                             <div>
                                 <input type="text" name="subject" id="subject" class="form-control d-none">
@@ -163,16 +186,15 @@
                             <div>
                                 <input type="text" name="day" id="day" class="form-control d-none">
                             </div>
-                            <div>
-                                <label>Tid</label><span id="tid-info" class="info"></span><br/>
-                                <textarea name="content" id="content" class="form-control" cols="60" rows="1" disabled></textarea>
+                            <div class="form-group">
+                                <input name="content" id="content" class="form-control" disabled required>
                             </div>
                             <div>
-                                <button name="submit" class="btn btn-primary" id="send-button">Send</button>
+                                <button name="submit" class="btn btn-primary" id="send-button">Boka</button>
                             </div>
                         </div>
                         <!--              -->
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -189,6 +211,11 @@
     </footer>
     <!-- Footer -->
     <!--                  -->
+    <script>
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 </body>
 
 </html>

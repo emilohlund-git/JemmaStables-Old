@@ -53,12 +53,13 @@ readTextFile("../static/json/samarbetspartners.json", function(text) {
             if (data[i].bild != "") {
                 let logo = document.createElement("img");
                 logo.src = data[i].bild;
-                logo.alt = data[i].beskrivning;
+                logo.alt = data[i].alt;
                 let col = document.createElement("div");
                 col.classList.add("col-md-3");
                 col.classList.add("partner-icon");
                 let link = document.createElement("a");
                 link.href = data[i].länk;
+                link.rel = "noreferrer";
                 link.target = "_blank";
                 link.appendChild(logo);
                 col.appendChild(link);
@@ -69,5 +70,17 @@ readTextFile("../static/json/samarbetspartners.json", function(text) {
 });
 
 $(document).ready(function() {
-    document.getElementById("copyright").innerHTML = "@ " + new Date().getFullYear() + " Copyright: Jemmastables.com | Design av Emil Öhlund"
+    document.getElementById("copyright").innerHTML = "@ " + new Date().getFullYear() + " Copyright: Jemmastables.com | Design av Emil Öhlund";
+    $('.first-button').on('click', function() {
+
+        $('.animated-icon1').toggleClass('open');
+    });
+    $('.second-button').on('click', function() {
+
+        $('.animated-icon2').toggleClass('open');
+    });
+    $('.third-button').on('click', function() {
+
+        $('.animated-icon3').toggleClass('open');
+    });
 });

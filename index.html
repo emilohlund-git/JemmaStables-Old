@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Emil Öhlund">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Stall, Ridbana, Hästar, Ridlektioner, Lösdrift, Jemma Stables, Maja Bogren, Hästtävling, Hästtävlingar, Hinder">
     <meta name="theme-color" content="#000000">
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -26,37 +28,41 @@
     </script>
     <!-- End Google Tag Manager -->
     <!-- FAVICON LINK -->
-    <link rel="icon" href="../android-chrome-512x512.png">
+    <link rel="icon" href="/android-chrome-512x512.png">
     <!-- BOOTSTRAP CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- JQUERY, POPPER & BOOTSTRAP.JS CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+
     <!-- CUSTOM JS-->
     <!-- cookiealert styles -->
-    <script type="text/javascript" src="static/js/instafeed.js"></script>
-    <script src="static/js/register-sw.js"></script>
-    <script src="static/js/custom.js"></script>
+    <script type="text/javascript" src="/static/js/instafeed.js"></script>
+    <script src="/static/js/register-sw.js"></script>
+    <script src="/static/js/custom.js"></script>
     <script src='https://jemmastables-instagramtoken.herokuapp.com/token.js'></script>
 
     <title>Jemma Stables - Startsida</title>
-    <meta name="description" content="Startsida för Jemma Stables stall, där Jemma Stables tar emot bokningar för ridbanan samt visar våra anläggningar & hästar som Jemma Stables har på gårde">
+    <meta name="description" content="Jemma Stables bedriver en verksamhet som bland annat innefattar uppfödning och utbildning av unghästar, inackordering, utbildning av tävlingshästar (markarbete och hoppning), träningar (hoppning), försäljning av hästar samt försäljning av deras egna hösilage som odlas på markerna utanför gården.">
 </head>
 
 <body>
     <!-- NAVIGATION -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a href="index.html" class="navbar-brand"><img id="logo" src="/static/img/Jemma_stables.webp" alt="Logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="white-text"><i class="fas fa-bars fa-1x"></i></span></button>
+            <a href="index.html" class="navbar-brand"><img id="logo" src="/static/img/Jemma_stables.png" alt="Logo"></a>
+            <!-- COLLAPSIBLE BUTTON -->
+            <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="animated-icon1"><span></span><span></span><span></span></div>
+            </button>
+            <!-- COLLAPSIBLE CONTENT -->
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav mr-auto">
+                <!-- LINKS -->
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Startsida <span class="sr-only">(current)</span></a>
                     </li>
@@ -65,35 +71,39 @@
                             Anläggningen
                         </a>
                         <div class="dropdown-menu sm-menu">
-                            <a class="dropdown-item" href="../anläggningen/stallet.html">Stallet</a>
-                            <a class="dropdown-item" href="../anläggningen/lösdriften.html">Lösdriften</a>
-                            <a class="dropdown-item" href="../anläggningen/ridbanan.html">Ridbanan</a>
+                            <a class="dropdown-item" href="/anläggningen/stallet.html">Stallet</a>
+                            <a class="dropdown-item" href="/anläggningen/lösdriften.html">Lösdriften</a>
+                            <a class="dropdown-item" href="/anläggningen/hagarna.html">Hagarna</a>
+                            <a class="dropdown-item" href="/anläggningen/ridbanan.html">Ridbanan</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown dmenu">
-                        <a class="nav-link dropdown-toggle" href="hästar.html" data-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">
                             Hästar
                         </a>
                         <div class="dropdown-menu sm-menu">
-                            <a class="dropdown-item" href="../hästar/tävlingshästar.html">Tävlingshästar</a>
-                            <a class="dropdown-item" href="../hästar/unghästar.html">Unghästar</a>
-                            <a class="dropdown-item" href="../hästar/avelsto.html">Avelsto</a>
+                            <a class="dropdown-item" href="/hästar/tävlingshästar.html">Tävlingshästar</a>
+                            <a class="dropdown-item" href="/hästar/unghästar.html">Unghästar</a>
+                            <a class="dropdown-item" href="/hästar/avelsto.html">Avelsto</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/om.html">Om Jemma Stables</a>
+                        <a class="nav-link" href="/kontakt.html">Kontakta oss</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/bokning.html">Bokning</a>
+                        <a class="nav-link" href="/bokning.html">Bokning av ridbana</a>
                     </li>
-                </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/samarbetspartners.html">Samarbetspartners</a>
+                    </li>
             </div>
+        </div>
         </div>
     </nav>
     <!-- CONTENT -->
     <div class="video-container">
         <video id="video" autoplay loop muted>
-            <source src="/static/media/maja.webm" />
+            <source src="/static/media/maja.mp4" />
         </video>
     </div>
     <div class="container" id="partner-container">
@@ -103,16 +113,23 @@
     </div>
     <div class="container" id="startsida-container">
         <div class="row">
-            <div class="col-12">
-                <h1>VÄLKOMMEN</h1>
-                <hr>
+            <div class="col-md-6">
+                <h1><b>VÄLKOMMEN</b></h1>
+                <p>Mittemellan Halmstad och Laholms kommun hittar ni en småort som heter Öringe, i utkanten av det lilla samhället har det byggts upp en hästgård som sedan mitten av 2018 bedrivs av JEMMA Stables.</p>
+                <p>På gården bor och arbetar John, Eva, Maja, Magnus och Adam (ej bosatt men finns i krokarna).</p>
+                <p>Dessa namn skapar akronymet JEMMA – så enkelt är det.</p><br>
+                <h3><b>Vad gör vi?</b></h3>
+                <p>Förutom att leva vanliga familjeliv och ha ett arbetsliv utanför stallet så bedriver vi en verksamhet som bland annat innefattar uppfödning och utbildning av unghästar, inackordering, utbildning av tävlingshästar (markarbete och hoppning),
+                    träningar (hoppning), försäljning av hästar samt försäljning av vårt egna hösilage som odlas på markerna utanför gården.</p>
+                <p>Det tål att förtydligas att det är det första M:et i JEMMA, dvs Maja som rider och utbildar hästar och andra ryttare.</p>
+            </div>
+            <div class="col-md-6">
+                <img class="logo-img" src="/static/img/anläggning/jemma_stables.png" alt="Jemma Stables - Drönarbild över anläggningen">
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut animi sunt voluptate accusantium! Ea aspernatur recusandae doloribus pariatur, mollitia autem dolorum nemo distinctio voluptates delectus tenetur ducimus fugit culpa! Aliquid
-                    ut architecto doloremque delectus tempora.</h6>
-            </div>
+
+
         </div>
 
     </div>
@@ -120,9 +137,9 @@
     <section class="container instacontainer">
         <div class="row">
             <div class="col-md-2">
-                <h2>@Majabogren</h2>
+                <h3><a class="white-link" href="https://www.instagram.com/majabogren/">@Majabogren</a></h3>
                 <hr>
-                <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore consectetur totam eum quam modi repudiandae.</h6>
+                <p>Följ Maja Bogren på Instagram för senaste nytt hos Jemma Stables.</p>
             </div>
             <div class="col-md-10 insta-col">
                 <div class="row gallery" id="instafeed">
@@ -130,6 +147,27 @@
             </div>
         </div>
     </section>
+
+    <!-- cookie warning toast -->
+    <div class="fixed-bottom p-4">
+        <div class="toast bg-dark text-white w-100 mw-100" role="alert" data-autohide="false">
+            <div class="toast-body p-4 d-flex flex-column">
+                <h4>Cookie Varning</h4>
+                <p>
+                    Den här hemsidan lagrar data i form utav cookies för analytiska behov. Genom att använda sidan så accepterar du att vi använder cookies.
+                    <a href="/cookie-policy.html" target="_blank">Läs mer här!</a>
+                </p>
+                <div class="ml-auto">
+                    <button type="button" class="btn btn-outline-light mr-3" id="btnDeny">
+                    Neka
+                </button>
+                    <button type="button" class="btn btn-light" id="btnAccept">
+                    Acceptera
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="page-footer font-small cyan darken-3">
@@ -141,19 +179,58 @@
         <!-- Copyright -->
 
     </footer>
+
     <!-- Footer -->
     <script>
-        $('#video').on('loadstart', function(event) {
-            $(this).addClass('loading');
-        });
-        $('#video').on('canplay', function(event) {
-            $(this).removeClass('loading');
-            $(this).attr('poster', '');
-        });
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function eraseCookie(name) {
+            document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        }
+
+        function cookieConsent() {
+            if (!getCookie('allowCookies')) {
+                $('.toast').toast('show')
+            }
+        }
+
+        $('#btnDeny').click(() => {
+            eraseCookie('allowCookies')
+            $('.toast').toast('hide')
+        })
+
+        $('#btnAccept').click(() => {
+            setCookie('allowCookies', '1', 7)
+            $('.toast').toast('hide')
+        })
+
+        // load
+        cookieConsent()
+
         var token;
         var feed = new Instafeed({
             accessToken: InstagramToken,
-            template: '<div class="col-lg-3 col-md-4 col-xs-6 thumb"><a href="{{link}}" target="_blank"><figure><img alt="Instagram bild" class="img-fluid img-thumbnail" src="{{image}}"></a></figure></div>',
+            resolution: 'thumbnail',
+            template: '<div class="col-lg-3 col-md-4 col-xs-6 thumb"><a rel="noreferrer" alt="Bild hämtad från Maja Bogrens Instagram" href="{{link}}" target="_blank"><figure><img alt="Bild hämtad från Maja Bogrens Instagram" class="img-fluid img-thumbnail" src="{{image}}"></a></figure></div>',
             sortBy: 'most-recent',
             limit: 8,
             filter: function(image) {

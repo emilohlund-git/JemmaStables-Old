@@ -62,12 +62,14 @@
     margin: 0.4em;
     padding: 1em 0.2em;
     width: 90%;
-    background-color: rgba(44, 255, 62, 0.034);
+    background-color: rgb(255, 255, 255);
     border-radius: 3px;
     border: 2px solid transparent;
     transition: box-shadow 200ms, border 100ms;
     box-shadow: 1px 1px rgba(255, 255, 255, 0);
     box-sizing: inherit;
+    color: black;
+    font-weight: 600;
 }
 
 #myCalendarWrapper h4 {
@@ -87,7 +89,7 @@
     border: 2px solid transparent;
     box-sizing: inherit;
     cursor: not-allowed;
-    background-color: rgba(219, 96, 96, 0.2);
+    background-color: rgb(53, 53, 53);
     box-shadow: 1px 1px rgba(0, 0, 0, 0);
 }
 

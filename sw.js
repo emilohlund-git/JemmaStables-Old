@@ -22,13 +22,13 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-    /\.(?:png|jpg|jpeg|svg|gif)$/,
+    ({ request }) => request.destination === 'image',
     new workbox.strategies.CacheFirst({
         cacheName: 'image-cache',
         plugins: [
             new workbox.expiration.ExpirationPlugin({
                 maxEntries: 50,
-                maxAgeSeconds: 30 * 24 * 60 * 60, // fixed in alpha.5
+                maxAgeSeconds: 24 * 60 * 60
             }),
         ],
     })

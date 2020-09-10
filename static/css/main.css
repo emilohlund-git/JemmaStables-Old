@@ -7,6 +7,16 @@
         margin: 0;
         padding: 0;
     }
+    
+     ::selection {
+        background: rgb(170, 170, 170);
+        /* WebKit/Blink Browsers */
+    }
+    
+     ::-moz-selection {
+        background: rgb(175, 175, 175);
+        /* Gecko Browsers */
+    }
     /* Start Gallery CSS */
     
     .thumb {
@@ -33,18 +43,89 @@
         padding: 200px 0 300px 0;
         color: white;
         font-family: 'Roboto Condensed', sans-serif;
-        text-align: center;
+        text-align: left;
         font-weight: 400 !important;
         font-size: 1.3rem;
+    }
+    
+    #förklarings-ruta {
+        padding-top: 65px;
+    }
+    
+    p {
+        text-align: left;
+        font-size: 1.3rem;
+        font-weight: 400 !important;
+    }
+    
+    #boknings-container p {
+        font-size: 1rem;
+    }
+    
+    #startsida-container p {
+        text-align: left;
     }
     
     #tider {
         padding-top: 50px;
     }
     
+    #cookie-container {
+        margin-top: 350px;
+        color: white;
+    }
+    
+    #cookie-container button {
+        margin-bottom: 20px;
+    }
+    
+    #cookie-container table {
+        margin: 50px 0;
+    }
+    
+    #cookie-container h1 {
+        font-size: 90px;
+        text-align: center;
+    }
+    
+    #cookie-container hr {
+        width: 30%;
+    }
+    
+    #cookie-container li {
+        font-size: 25px;
+        padding-bottom: 20px;
+    }
+    
+    .white-table tr {
+        color: white;
+    }
+    
     .list-group-item {
-        background: black;
+        background: rgb(255, 255, 255);
         border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+        color: #333 !important;
+        cursor: pointer;
+        transition: .2s all ease-in-out;
+        padding: 10px 0;
+    }
+    
+    .white-link {
+        color: white !important;
+        text-transform: none !important;
+    }
+    
+    .öppenRidbana {
+        background-color: rgb(15 255 36 / 15%) !important;
+    }
+    
+    .ridlektion {
+        background-color: rgb(219 96 96 / 35%) !important;
+    }
+    
+    .selected {
+        filter: brightness(.85);
+        border: 1px solid rgba(51, 51, 51, 0.075);
     }
     
     .form-control,
@@ -52,11 +133,49 @@
     .form-control:focus,
     .form-control:focus:active {
         color: rgb(0, 0, 0) !important;
+    }
+    
+    .white-text {
+        color: white !important;
+    }
+    
+    .form-group {
+        position: relative;
+        z-index: 1;
+        height: auto;
+        padding: 30px 0;
+    }
+    
+    .form-group label {
+        position: absolute;
+        left: 11px;
+        top: 30px;
+        transition: .3s all ease-in-out;
+    }
+    
+    .form-group input:focus {
         border-bottom: 1px solid rgba(0, 0, 0, 0.384) !important;
     }
     
+    .samarbets-row {
+        margin-bottom: 100px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.137);
+    }
+    
+    .form-group input:focus+label {
+        top: -1px;
+    }
+    
+    .form-group input:valid+label {
+        top: -1px;
+    }
+    
+    #partner-container {
+        padding-bottom: 100px;
+    }
+    
     video.loading {
-        background: black url(../gif/loading.gif) no-repeat;
+        background: black url(../gif/loading.png) no-repeat;
         background-position: center;
     }
     
@@ -67,20 +186,8 @@
         border-bottom: 1px solid white;
     }
     
-    #select,
-    #select2 {
-        color: white;
-        background: none;
-        border: none;
-    }
-    
     #send-button {
         width: 150px;
-    }
-    
-    #select option:checked,
-    #select2 option:not(:checked) {
-        background: none !important;
     }
     
     #okButton {
@@ -104,14 +211,6 @@
     
     #frmContact div {
         margin-top: 20px;
-    }
-    
-    .modal {
-        font-family: 'Roboto Condensed', sans-serif;
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: 400 !important;
-        border-radius: 0;
     }
     
     #partners {
@@ -177,7 +276,7 @@
         padding-top: 350px;
         color: white;
         font-family: 'Roboto Condensed', sans-serif;
-        text-align: center;
+        text-align: center !important;
         font-weight: 400 !important;
         font-size: 1.3rem;
     }
@@ -428,8 +527,6 @@
         font-family: 'Roboto Condensed', sans-serif;
         font-weight: 700;
         color: #fff;
-        font-size: 18px;
-        font-size: 28px;
     }
     
     .fa,
@@ -484,6 +581,16 @@
         float: left
     }
     
+    .carousel-item {
+        padding: 100px 0;
+    }
+    
+    .carousel-item img {
+        max-height: 70vh;
+        object-fit: cover;
+        border: 1px solid #fff;
+    }
+    
     #partner-container {
         margin-top: -125px;
         align-items: center;
@@ -536,22 +643,66 @@
         width: 100%;
     }
     
-    .modal-header {
-        background: rgb(94, 131, 97);
+    #myModal,
+    #myModal2 {
+        border: 0;
+        font-family: 'Roboto Condensed', sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 400 !important;
+    }
+    
+    #myModal .modal-header,
+    #myModal2 .modal-header {
+        border: 0;
+        background: rgb(255, 255, 255);
+        color: rgb(95, 95, 95);
+    }
+    
+    .modal-footer,
+    .modal-footer {
+        border: 0;
+        border-radius: 0;
+    }
+    
+    .modal-body .form-group select {
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    
+    .modal-body .form-group select option {
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    
+    .modal-footer .btn {
+        border-radius: 0;
+    }
+    /* TEST */
+    /* END TEST */
+    
+    .modal-title {
+        font-weight: 600;
+    }
+    
+    #sel1 {
+        width: 100%;
+    }
+    
+    #boka-knapp:hover {
+        background: rgb(59, 59, 59);
+    }
+    
+    #stäng-knapp:hover {
+        background: rgb(88, 88, 88);
         color: white;
     }
     
-    .modal-footer {
-        align-items: center;
-    }
-    
-    #myModal button,
-    #send-button {
-        border-radius: 0;
+    #send-button:hover {
+        background: rgb(59, 59, 59);
     }
     
     #send-button {
         border: 0;
+        border-radius: 0;
     }
     
     .close,
@@ -562,13 +713,13 @@
     #boka-knapp,
     #send-button {
         border: 0;
-        background-color: rgb(94, 131, 97);
+        background-color: rgb(88, 88, 88);
     }
     
     #stäng-knapp {
         background: none;
-        color: rgb(94, 131, 97);
-        border: 1px solid rgb(94, 131, 97);
+        color: rgb(105, 105, 105);
+        border: 1px solid rgb(102, 102, 102);
     }
     
     #imagemodal img {
@@ -599,7 +750,212 @@
         font-size: 9em;
     }
     
+    .logo-img {
+        filter: grayscale(1);
+        width: 80%;
+        height: 28em;
+        border: 1px solid white;
+        object-fit: cover;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+        transition: .25s all ease-in-out;
+    }
+    
+    .logo-img:hover {
+        filter: grayscale(0);
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0 0 25px 0;
+        text-transform: uppercase;
+    }
+    
+    .bokadTid {
+        color: black !important;
+        border: 1px solid #beaf80;
+        background: #ffeeba;
+        height: 50px;
+        vertical-align: middle;
+        padding-top: 7px;
+        transition: 0.22s ease;
+    }
+    
+    .bokadTid:hover {
+        background: #ada077;
+        border: 1px solid #867b58;
+    }
+    
+    .fas {
+        margin-top: 80px;
+        margin-bottom: 190px;
+        font-size: 30px;
+    }
+    
+    .röd-text {
+        color: rgb(219 96 96 / 55%) !important;
+    }
+    
+    .orange-text {
+        color: rgb(219 175 96 / 45%) !important;
+    }
+    
+    .grön-text {
+        color: rgb(15 255 36 / 35%) !important;
+    }
+    
+    #boknings-container p,
+    #boknings-container h6 {
+        color: white;
+    }
+    
+    #horizontal-arrows {
+        display: none !important;
+    }
+    
+    i {
+        cursor: pointer;
+    }
+    
+    @media only screen and (max-width: 767px) {
+        #calendar {
+            margin-left: -.9em !important;
+        }
+        #calendar #calendar-days,
+        #calendar #calendar-grid {
+            padding: 0 !important;
+            line-height: 1 !important;
+        }
+        #horizontal-arrows {
+            display: block !important;
+            padding: 0 50px;
+            margin-top: -55px;
+            margin-bottom: 0;
+            height: 200px;
+        }
+        #horizontal-arrows i {
+            font-size: 40px;
+        }
+        #navigation-wrapper {
+            display: none !important;
+        }
+        #om-oss-container {
+            align-items: center;
+            text-align: center !important;
+        }
+    }
+    
     @media only screen and (max-width: 1300px) {
+        #startsida-container {
+            text-align: center;
+        }
+        #cookie-container ul {
+            text-decoration: none;
+            list-style: none;
+        }
+        #cookie-container {
+            margin-top: 150px;
+            text-align: center;
+            color: white;
+        }
+        #cookie-container h1 {
+            font-size: 50px;
+        }
+        #cookie-container p {
+            text-align: center !important;
+        }
+        #förklarings-ruta {
+            padding-top: 0px;
+            text-align: center;
+        }
+        /* Icon 1 */
+        .animated-icon1,
+        .animated-icon2,
+        .animated-icon3 {
+            width: 30px;
+            height: 20px;
+            position: relative;
+            margin: 0px;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .5s ease-in-out;
+            -moz-transition: .5s ease-in-out;
+            -o-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+            cursor: pointer;
+        }
+        .animated-icon1 span,
+        .animated-icon2 span,
+        .animated-icon3 span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .25s ease-in-out;
+            -moz-transition: .25s ease-in-out;
+            -o-transition: .25s ease-in-out;
+            transition: .25s ease-in-out;
+        }
+        .animated-icon1 span {
+            background: #ffffff;
+        }
+        .animated-icon1 span:nth-child(1) {
+            top: 0px;
+        }
+        .animated-icon1 span:nth-child(2) {
+            top: 10px;
+        }
+        .animated-icon1 span:nth-child(3) {
+            top: 20px;
+        }
+        .animated-icon1.open span:nth-child(1) {
+            top: 11px;
+            -webkit-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            -o-transform: rotate(135deg);
+            transform: rotate(135deg);
+        }
+        .animated-icon1.open span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+        .animated-icon1.open span:nth-child(3) {
+            top: 11px;
+            -webkit-transform: rotate(-135deg);
+            -moz-transform: rotate(-135deg);
+            -o-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+        }
+        .navbar-expand-lg>.container,
+        .navbar-expand-lg>.container-fluid,
+        .navbar-expand-lg>.container-lg,
+        .navbar-expand-lg>.container-md,
+        .navbar-expand-lg>.container-sm,
+        .navbar-expand-lg>.container-xl {
+            align-items: stretch !important;
+        }
+        p {
+            font-size: 14px;
+        }
+        .logo-img {
+            margin-top: 75px;
+            width: 100%;
+            height: 25em;
+        }
         .header404 {
             font-size: 5em;
         }
@@ -608,6 +964,10 @@
         }
         .row {
             margin: 0;
+        }
+        .samarbets-row {
+            margin-bottom: 100px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.137);
         }
         #om-oss-container .form-control {
             border-bottom: 1px solid rgba(255, 255, 255, 0.329) !important;
@@ -626,9 +986,6 @@
         .partner-icon {
             margin-bottom: 50px;
             align-self: center;
-        }
-        #navigation-wrapper {
-            display: none !important;
         }
         #om-oss-container {
             margin-top: -150px;
@@ -678,13 +1035,10 @@
         nav #logo {
             -webkit-filter: brightness(0) invert(1);
             filter: brightness(0) invert(1);
-            height: 3em;
+            height: 2.5em;
         }
         a {
             color: white !important;
-        }
-        .navbar-header {
-            float: none;
         }
         .centered {
             font-family: "Roboto", sans-serif;
@@ -692,13 +1046,6 @@
             color: #fff;
             font-size: 36px;
             top: 70%;
-        }
-        .navbar-left,
-        .navbar-right {
-            float: none !important;
-        }
-        .navbar-toggle {
-            display: block;
         }
         .navbar-collapse {
             border-top: 1px solid transparent;
@@ -708,17 +1055,6 @@
         .navbar-fixed-top {
             top: 0;
             border-width: 0 0 1px;
-        }
-        .navbar-nav {
-            float: none !important;
-            margin-top: 7.5px;
-        }
-        .navbar-nav>li {
-            float: none;
-        }
-        .navbar-nav>li>a {
-            padding-top: 10px;
-            padding-bottom: 10px;
         }
         nav .nav-link {
             font-size: 18px;
