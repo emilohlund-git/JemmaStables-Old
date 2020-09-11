@@ -92,7 +92,7 @@ feed.run();
 > The main feature of the website is the booking system, which I developed from scratch. I am using a calendar developed by [Mathias Picker](https://github.com/MathiasWP/CalendarPickerJS).
 > It's extremely well written and easy to understand once you dive into the source code. Basically I'm using it to pick a date, and display a modal 
 > which contains available, or none-available days for users of the website to book a time for riding. Like this:
-[Example of calendar](https://i.ibb.co/TgjrSSS/displaycalendar.jpg)
+![Example of calendar](https://i.ibb.co/TgjrSSS/displaycalendar.jpg)
 
 > The selected day, month, name, email & time then gets sent to the database. Aswell as an e-mail to both the user and the company.
 > Which I'm handling using [PHPMailer](https://github.com/PHPMailer/PHPMailer). Which is amazing.
