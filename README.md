@@ -86,8 +86,10 @@ feed.run();
 > So I swapped it for MariaDB which is included in my hosting domains payment plan.
 > It was a pain since I've never really worked with MySQLi before, but it was well worth it in the end.
 
-> I'm trying to get access to [Equipe](http://www.equipe.com/)'s API to fetch more information regarding the horses
-> on the website, still no luck. (I need to get a hold of the developers to get a log-in, and to see if what I'm searching for is possible).
+> ~~I'm trying to get access to [Equipe](http://www.equipe.com/)'s API to fetch more information regarding the horses
+> on the website, still no luck. (I need to get a hold of the developers to get a log-in, and to see if what I'm searching for is possible).~~
+
+> It's not possible. I will have to stick with my information in .json files > render on website plan. Atleast until I figure out something better.
 
 > The main feature of the website is the booking system, which I developed from scratch. I am using a calendar developed by [Mathias Picker](https://github.com/MathiasWP/CalendarPickerJS).
 > It's extremely well written and easy to understand once you dive into the source code. Basically I'm using it to pick a date, and display a modal 
@@ -112,4 +114,56 @@ $mail = new PHPMailer(true);
 ```
 
 > Sending e-mails using PHPMailer is a breeze. For sure. And they have great documentation for it, aswell as a big userbase.
+
+> Anyway, when you pick a date in the calender a list of options appear, each option is one hour of the day. You get to pick which hour you want to book. Already booked hours appear on the list of options and also on each day of the calendar as a red color, the more times that are booked during the day the more red the background gets. So that you get an indication on how available the day you thought about might be before opening it, just for slight convenience and transparency. 
+
+> I've created an admin portal for the website owners to log in to, they are able to add specific times with different categories. 
+![Admin portal](https://i.ibb.co/RzQNQ8r/admin-jemmastables.jpg)
+
+> For example, if they have an obstacle course available on the track for a specific day they can add it to the calender via the admin page. Then it will show up as a green background, aswell as green backgrounds for the affected times in the options list.   
+![Green Background](https://i.ibb.co/Ns4sc3J/Green.jpg)
+
+> I added a function which removes the green background on the calendar days if all the 'green' times are booked.
+> It looks a little something like this (Along with my thought proccess)
+
+```javascript
+/*
+I want to check if all the times this day is booked, in that case I do not want to display
+this category on this day. So first I need to fetch all the booked times and match them by this day.
+Lets say I got all the times in bokadeTider.. then I iterate through them and match them with the times given by 
+element.tid, which would be 10:00-14:00, and if 10-11-12-13 is booked I do not want to add the class 'öppenRidbana'. Or I can split element.tid on -, which would give me 10:00, 14:00 in array
+Then I split : to get 10 & 14. Then I count the steps from 10 to 14, which is four.
+Then I iterate through bokadeTider to see if bokadeTider.split(":")[0] matches all four times. Bingo!
+
+The element.tid data looks like this "08:00-09:00" (As an example)
+bokadeTider[x] looks like this "08:00-09:00,September 09" (time,day)
+*/
+let start = element.tid.split("-")[0].split(":")[0];
+let end = element.tid.split("-")[1].split(":")[0];
+let matchCount = 0;
+let amtOfMatches = 0;
+for (z = start; z < end; z++) {
+    matchCount++;
+}
+
+for (j = 0; j < bokadeTider.length; j++) {
+    bokadDag = bokadeTider[j].split(",")[1].split(" ")[1];
+    if (bokadDag == days[i].innerHTML) {
+        for (m = start; m < end; m++) {
+            if (bokadeTider[j].split(",")[0].split("-")[0].split(":")[0] == m) {
+                amtOfMatches++;
+            }
+        }
+    }
+}
+
+if (amtOfMatches < matchCount) {
+    days[i].classList.add("öppenRidbana");
+    days[i].style.color = "white";
+}
+/*
+Before this function I load in the data in JSON form from the database using PHP with an Ajax call to deliver to front-end, and iterate through every row as 'element'. Which is why you element.tid out of nowhere..
+I'm also looping through every day in the calendar which is why you see days[i].
+*/
+```
 

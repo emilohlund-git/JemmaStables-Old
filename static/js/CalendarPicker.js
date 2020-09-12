@@ -336,10 +336,12 @@ class CalendarPicker {
                         $('#modal-title').text(this.value.toDateString());
                         let day = this.value.toString().split(" ")[2].replace(/^0+/, '');
                         currentDay = day;
-                        createTimes($('#sel1'));
-                        hämtaTider();
-                        changeTimes(currentDay);
-                        hämtaBokadeTider(currentDay);
+                        $.when(createTimes($('#sel1'))).done(function() {
+                            hämtaTider();
+                        });
+                        $.when(hämtaBokadeTider(currentDay)).done(function() {
+                            changeTimes(currentDay);
+                        });
                     }
                 });
             });
@@ -349,31 +351,40 @@ class CalendarPicker {
             }
 
             function matchEndTimes(time1, time2) {
+                if (time1.split("-").length > 2) {
+                    return time1.split(" ")[0].split("-")[1] == time2.split("-")[1];
+                }
                 return time1.split("-")[1] == time2.split("-")[1];
             }
 
-            hämtaTider();
+            let bokadeTider = [];
 
-            jQuery.ajax({
-                url: '../php/get_bokade_tider.php', // give complete url here'
-                type: "GET",
-                success: function(data) {
-                    var myArray = jQuery.parseJSON(data); // instead of JSON.parse(data)
-                    jQuery(myArray).each(function(index, element) {
-                        for (let i = 0; i < days.length; i++) {
-                            console.log(element.dag.split(" ")[1] && month + " " + months.indexOf(element.dag.split(" ")[0]))
-                            if (days[i].innerHTML.replace(/^0+/, '') == element.dag.split(" ")[1] && month == months.indexOf(element.dag.split(" ")[0])) {
-                                if (!days[i].classList.contains("öppenRidbana") && !days[i].classList.contains("ridlektion")) {
-                                    days[i].style.background = "rgb(208 151 151)";
+            laddaBokadeTiderStart();
+
+            function laddaBokadeTiderStart() {
+                jQuery.ajax({
+                    url: '../php/get_bokade_tider.php', // give complete url here'
+                    type: "GET",
+                    success: function(data) {
+                        var myArray = jQuery.parseJSON(data); // instead of JSON.parse(data)
+                        jQuery(myArray).each(function(index, element) {
+                            for (let i = 0; i < days.length; i++) {
+                                if (days[i].innerHTML.replace(/^0+/, '') == element.dag.split(" ")[1] && month == months.indexOf(element.dag.split(" ")[0])) {
+                                    bokadeTider.push(element.tid + "," + element.dag);
+                                    if (!days[i].classList.contains("öppenRidbana") && !days[i].classList.contains("ridlektion")) {
+                                        days[i].style.background = "rgb(208 151 151)";
+                                    }
                                 }
                             }
-                        }
-                    });
-                },
-                error: function(err) {
-                    console.log(err);
-                }
-            });
+                        });
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    }
+                }).done(function() {
+                    hämtaTider()
+                });;
+            }
 
             function hämtaTider(select) {
                 jQuery.ajax({
@@ -385,8 +396,30 @@ class CalendarPicker {
                             for (let i = 0; i < days.length; i++) {
                                 if (days[i].innerHTML == element.dag.split("-")[2] && month == element.dag.split("-")[1].replace(/[^1-9.]/g, "") - 1) {
                                     if (element.kategori == "Öppen ridning") {
-                                        days[i].classList.add("öppenRidbana");
-                                        days[i].style.color = "white";
+                                        let start = element.tid.split("-")[0].split(":")[0];
+                                        let end = element.tid.split("-")[1].split(":")[0];
+                                        let matchCount = 0;
+                                        let amtOfMatches = 0;
+
+                                        for (let z = start; z < end; z++) {
+                                            matchCount++;
+                                        }
+
+                                        for (let j = 0; j < bokadeTider.length; j++) {
+                                            let bokadDag = bokadeTider[j].split(",")[1].split(" ")[1];
+                                            if (bokadDag == days[i].innerHTML) {
+                                                for (let m = start; m < end; m++) {
+                                                    if (bokadeTider[j].split(",")[0].split("-")[0].split(":")[0] == m) {
+                                                        amtOfMatches++;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        if (amtOfMatches < matchCount) {
+                                            days[i].classList.add("öppenRidbana");
+                                            days[i].style.color = "white";
+                                        }
                                     } else if (element.kategori == "Ridlektioner") {
                                         days[i].classList.add("ridlektion");
                                         days[i].style.color = "white";
@@ -412,7 +445,7 @@ class CalendarPicker {
                             if (day == element.dag.split(" ")[1] && month == months.indexOf(element.dag.split(" ")[0])) {
                                 for (let i = 0; i < options.length; i++) {
                                     if (options[i].innerHTML == element.tid) {
-                                        options[i].classList.add("ridlektion");
+                                        options[i].classList.add("bokad");
                                         options[i].classList.add("disabled");
                                         options[i].innerHTML += " - Bokad av " + element.namn;
                                     }

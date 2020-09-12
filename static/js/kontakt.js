@@ -27,21 +27,19 @@ $(document).ready(function() {
     /* Validation function for the form */
     function validateContact() {
         var valid = true;
-        $(".demoInputBox").css('background-color', '');
-        $(".info").html('');
         if (!$("#namn").val()) {
             $("#namn-info").html("(obligatoriskt)");
-            $("#namn").css('background-color', '#FFFFDF');
+            $("#namn").val("Du måste fylla i ditt namn.");
             valid = false;
         }
         if (!$("#email").val()) {
             $("#email-info").html("(obligatoriskt)");
-            $("#email").css('background-color', '#FFFFDF');
+            $("#email").val("Du måste fylla i en epost adress.")
             valid = false;
         }
         if (!$("#email").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
             $("#email-info").html("(ogiltig  )");
-            $("#email").css('background-color', '#FFFFDF');
+            $("#email").val("Ogilig epost adress.")
             valid = false;
         }
         if (!$("#ämne").val()) {

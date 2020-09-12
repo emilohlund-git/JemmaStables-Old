@@ -6,9 +6,8 @@
     <meta name="author" content="Emil Öhlund">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
-    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="manifest" href="../manifest.webmanifest">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-
     <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
@@ -52,7 +51,7 @@
     <!-- NAVIGATION -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top transparent">
         <div class="container-fluid">
-            <a href="../index.html" class="navbar-brand"><img id="logo" src="../static/img/Jemma_stables.png" alt="Logo"></a>
+            <a href="../index.html" class="navbar-brand"><img id="logo" src="../static/img/jemma_stables.png" alt="Logo"></a>
             <!-- COLLAPSIBLE BUTTON -->
             <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="animated-icon1"><span></span><span></span><span></span></div>
@@ -62,14 +61,14 @@
                 <!-- LINKS -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Startsida <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../index.html">Startsida</a>
                     </li>
                     <li class="nav-item dropdown dmenu">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                             Anläggningen
                         </a>
                         <div class="dropdown-menu sm-menu">
-                            <a class="dropdown-item" href="../anläggningen/stallet.html">Stallet</a>
+                            <a class="dropdown-item" href="../anläggningen/stallet.html">Stallet <span class="sr-only">(Nuvarande sida)</span></a>
                             <a class="dropdown-item" href="../anläggningen/lösdriften.html">Lösdriften</a>
                             <a class="dropdown-item" href="../anläggningen/hagarna.html">Hagarna</a>
                             <a class="dropdown-item" href="../anläggningen/ridbanan.html">Ridbanan</a>
@@ -94,8 +93,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../samarbetspartners.html">Samarbetspartners</a>
                     </li>
+                </ul>
             </div>
-        </div>
         </div>
     </nav>
     <!-- CONTENT -->
@@ -144,15 +143,46 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <!-- Footer -->
-    <footer class="page-footer font-small cyan darken-3">
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>Om</h6>
+                    <p class="text-justify">Jemma Stables bedriver en verksamhet som bland annat innefattar uppfödning och utbildning av unghästar, inackordering, utbildning av tävlingshästar (markarbete och hoppning), träningar (hoppning), försäljning av hästar samt försäljning
+                        av deras egna hösilage som odlas på markerna utanför gården.</p>
+                </div>
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3" id="copyright">
-            <a href="https://www.jemmastables.com/"> Jemmastables.com</a>
+                <div class="col-xs-6 col-md-3">
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Snabblänkar</h6>
+                    <ul class="footer-links">
+                        <li><a href="/bokning.html">Boka tid på ridbanan</a></li>
+                        <li><a href="/kontakt.html">Kontakta oss</a></li>
+                        <li><a href="/cookie-policy.html">Cookie policy</a></li>
+                        <li><a href="/integritetspolicy.html">Integritetspolicy</a></li>
+                        <li><a class="back-to-top" href="#">Tillbaks till toppen av sidan!</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
         </div>
-        <!-- Copyright -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <div class="copyright-text" id="copyright">
+                    </div>
+                </div>
 
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="instagram" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/majabogren/"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- Footer -->
 </body>

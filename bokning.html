@@ -54,7 +54,7 @@
     <!-- NAVIGATION -->
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top transparent">
         <div class="container-fluid">
-            <a href="index.html" class="navbar-brand"><img id="logo" src="/static/img/Jemma_stables.png" alt="Logo"></a>
+            <a href="index.html" class="navbar-brand"><img id="logo" src="/static/img/jemma_stables.png" alt="Logo"></a>
             <!-- COLLAPSIBLE BUTTON -->
             <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="animated-icon1"><span></span><span></span><span></span></div>
@@ -64,7 +64,7 @@
                 <!-- LINKS -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Startsida <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/index.html">Startsida</a>
                     </li>
                     <li class="nav-item dropdown dmenu">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
@@ -91,13 +91,13 @@
                         <a class="nav-link" href="/kontakt.html">Kontakta oss</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/bokning.html">Bokning av ridbana</a>
+                        <a class="nav-link" href="/bokning.html">Bokning av ridbana <span class="sr-only">(Nuvarande sida)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/samarbetspartners.html">Samarbetspartners</a>
                     </li>
+                </ul>
             </div>
-        </div>
         </div>
     </nav>
     <!-- CONTENT -->
@@ -118,10 +118,10 @@
             </div>
             <div class="col-md-1" id="navigation-wrapper">
                 <div class="row">
-                    <i class="fas fa-long-arrow-alt-up" id="previous-month"></i>
+                    <i class="fas fa-sort-up" id="previous-month"></i>
                 </div>
                 <div class="row">
-                    <i class="fas fa-long-arrow-alt-down" id="next-month"></i>
+                    <i class="fas fa-sort-down" id="next-month"></i>
                 </div>
             </div>
             <div class="col-md-1" id="horizontal-arrows">
@@ -129,12 +129,24 @@
                 <i class="fas fa-arrow-circle-right float-right" id="next-month-horizontal"></i>
             </div>
             <div class="col-md-2 col-sm-12" id="förklarings-ruta">
-                <h6>Är färgen <a class="röd-text" data-toggle="tooltip" data-html="true" title="Tider på den här dagen är designerade för ridlektioner."><b>röd?</b></a></h6>
-                <p></p>
-                <h6>Är färgen <a data-toggle="tooltip" data-html="true" title="Då gäller självhushållning med hinder."><b>vit?</b></a></a>
+                <h6>Är färgen
+                    <a class="röd-text" data-toggle="tooltip" data-html="true" title="Tider på den här dagen är designerade för ridlektioner.">
+                        <b>röd?</b>
+                    </a>
                 </h6>
-                <p></p>
-                <h6>Är färgen <a class="grön-text" data-toggle="tooltip" data-html="true" title="Färdigbyggd bana finns upplagd att träna på."><b>grön?</b></a></h6>
+                <p>Tider på den här dagen är designerade för ridlektioner.</p>
+                <h6>Är färgen
+                    <a data-toggle="tooltip" data-html="true" title="Då gäller självhushållning med hinder.">
+                        <b>vit?</b>
+                    </a>
+                </h6>
+                <p>Då gäller självhushållning med hinder.</p>
+                <h6>Är färgen
+                    <a class="grön-text" data-toggle="tooltip" data-html="true" title="Färdigbyggd bana finns upplagd att träna på.">
+                        <b>grön?</b>
+                    </a>
+                </h6>
+                <p>Färdigbyggd bana finns upplagd att träna på.</p>
             </div>
         </div>
     </div>
@@ -173,24 +185,29 @@
                         <div id="frmContact">
                             <div id="mail-status"></div>
                             <div class="form-group">
-                                <input type="text" name="userName" id="userName" class="form-control" required>
-                                <label for="userName">Namn</label>
+                                <input type="text" name="förnamn" id="förnamn" class="form-control" required>
+                                <label for="förnamn" id="förnamn-label">Förnamn</label>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="userEmail" id="userEmail" class="form-control" required>
-                                <label for="userEmail">Email</label>
+                                <input type="text" name="efternamn" id="efternamn" class="form-control" required>
+                                <label for="efternamn" id="efternamn-label">Efternamn</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" id="email" class="form-control" required>
+                                <label for="email" id="email-label">Email</label>
                             </div>
                             <div>
                                 <input type="text" name="subject" id="subject" class="form-control d-none">
                             </div>
                             <div>
-                                <input type="text" name="day" id="day" class="form-control d-none">
+                                <input type="text" name="dag" id="dag" class="form-control d-none">
                             </div>
-                            <div class="form-group">
-                                <input name="content" id="content" class="form-control" disabled required>
+                            <div>
+                                <input name="tid" id="tid" class="form-control" disabled required>
                             </div>
                             <div>
                                 <button name="submit" class="btn btn-primary" id="send-button">Boka</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="stäng-knapp">Avbryt</button>
                             </div>
                         </div>
                         <!--              -->
@@ -199,18 +216,48 @@
             </div>
         </div>
     </div>
-    <!-- Footer -->
-    <footer class="page-footer font-small cyan darken-3">
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>Om</h6>
+                    <p class="text-justify">Jemma Stables bedriver en verksamhet som bland annat innefattar uppfödning och utbildning av unghästar, inackordering, utbildning av tävlingshästar (markarbete och hoppning), träningar (hoppning), försäljning av hästar samt försäljning
+                        av deras egna hösilage som odlas på markerna utanför gården.</p>
+                </div>
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3" id="copyright">
-            <a href="https://www.jemmastables.com/"> Jemmastables.com</a>
+                <div class="col-xs-6 col-md-3">
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6>Snabblänkar</h6>
+                    <ul class="footer-links">
+                        <li><a href="/bokning.html">Boka tid på ridbanan</a></li>
+                        <li><a href="/kontakt.html">Kontakta oss</a></li>
+                        <li><a href="/cookie-policy.html">Cookie policy</a></li>
+                        <li><a href="/integritetspolicy.html">Integritetspolicy</a></li>
+                        <li><a class="back-to-top" href="#">Tillbaks till toppen av sidan!</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
         </div>
-        <!-- Copyright -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <div class="copyright-text" id="copyright">
+                    </div>
+                </div>
 
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="instagram" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/majabogren/"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- Footer -->
-    <!--                  -->
     <script>
         $(function() {
             $('[data-toggle="tooltip"]').tooltip()

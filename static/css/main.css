@@ -123,9 +123,21 @@
         background-color: rgb(219 96 96 / 35%) !important;
     }
     
+    .bokad {
+        background-color: rgb(219 96 96 / 35%) !important;
+    }
+    
+    .form-group label {
+        transition: .2s all ease-in-out;
+    }
+    
+    .varnings-text {
+        text-shadow: 0 0 1px rgb(136, 71, 71);
+        color: rgb(136, 71, 71) !important;
+    }
+    
     .selected {
-        filter: brightness(.85);
-        border: 1px solid rgba(51, 51, 51, 0.075);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.288);
     }
     
     .form-control,
@@ -330,10 +342,22 @@
     #frmContact-kontakt button {
         float: right;
         width: 7rem;
-        background: white;
-        border: 0;
+        background: none;
+        border: 1px solid white;
+        text-transform: uppercase;
         border-radius: 0;
-        color: black !important;
+        color: rgb(255, 255, 255) !important;
+        transition: .2s all ease-in-out
+    }
+    
+    #frmContact-kontakt button:hover {
+        float: right;
+        width: 7rem;
+        background: rgb(255, 255, 255);
+        border: 1px solid white;
+        text-transform: uppercase;
+        border-radius: 0;
+        color: rgb(0, 0, 0) !important;
     }
     
     .card-title {
@@ -513,6 +537,10 @@
     nav .logo-filter {
         -webkit-filter: brightness(0) invert(1);
         filter: brightness(0) invert(1);
+    }
+    
+    .navbar-brand {
+        transition: .5s all ease-in-out;
     }
     
     main {
@@ -712,7 +740,7 @@
     
     #boka-knapp,
     #send-button {
-        border: 0;
+        border: 1px solid rgb(88, 88, 88);
         background-color: rgb(88, 88, 88);
     }
     
@@ -720,6 +748,7 @@
         background: none;
         color: rgb(105, 105, 105);
         border: 1px solid rgb(102, 102, 102);
+        border-radius: 0;
     }
     
     #imagemodal img {
@@ -754,6 +783,7 @@
         filter: grayscale(1);
         width: 80%;
         height: 28em;
+        margin-top: 80px;
         border: 1px solid white;
         object-fit: cover;
         -moz-user-select: none;
@@ -821,8 +851,186 @@
     i {
         cursor: pointer;
     }
+    /*
+    FOOTER SECTION
+    */
+    
+    .site-footer {
+        margin-top: 150px;
+        background-color: #ffffff;
+        padding: 45px 0 20px;
+        font-size: 15px;
+        line-height: 24px;
+        color: #000000;
+    }
+    
+    .site-footer hr {
+        border-top-color: #bbb;
+        opacity: 0.5
+    }
+    
+    .site-footer hr.small {
+        margin: 20px 0
+    }
+    
+    .site-footer h6 {
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-top: 5px;
+        letter-spacing: 2px
+    }
+    
+    .site-footer a {
+        color: #737373;
+    }
+    
+    .site-footer a:hover {
+        color: #3366cc;
+        text-decoration: none;
+    }
+    
+    .footer-links {
+        padding-left: 0;
+        list-style: none
+    }
+    
+    .footer-links li {
+        display: block
+    }
+    
+    .footer-links a {
+        color: #737373
+    }
+    
+    .footer-links a:active,
+    .footer-links a:focus,
+    .footer-links a:hover {
+        color: #3366cc;
+        text-decoration: none;
+    }
+    
+    .footer-links.inline li {
+        display: inline-block
+    }
+    
+    .site-footer .social-icons {
+        text-align: right
+    }
+    
+    .site-footer .social-icons a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin-left: 6px;
+        margin-right: 0;
+        border-radius: 100%;
+        background-color: #000000
+    }
+    
+    .copyright-text {
+        margin: 0
+    }
+    
+    @media (max-width:991px) {
+        .site-footer [class^=col-] {
+            margin-bottom: 30px
+        }
+    }
+    
+    @media (max-width:767px) {
+        .site-footer {
+            padding-bottom: 0
+        }
+        .site-footer .copyright-text,
+        .site-footer .social-icons {
+            text-align: center
+        }
+        .site-footer h6 {
+            font-size: 1.6em;
+            margin-bottom: 20px;
+        }
+        .site-footer .footer-links li {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .site-footer .footer-links:hover {
+            color: #8eadc2;
+        }
+    }
+    
+    .social-icons {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none
+    }
+    
+    .social-icons li {
+        display: inline-block;
+        margin-bottom: 4px
+    }
+    
+    .social-icons li.title {
+        margin-right: 15px;
+        text-transform: uppercase;
+        color: #96a2b2;
+        font-weight: 700;
+        font-size: 13px
+    }
+    
+    .social-icons a {
+        background-color: #eceeef;
+        color: #818a91;
+        font-size: 16px;
+        display: inline-block;
+        line-height: 44px;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        margin-right: 8px;
+        border-radius: 100%;
+        -webkit-transition: all .2s linear;
+        -o-transition: all .2s linear;
+        transition: all .2s linear
+    }
+    
+    .social-icons a:active,
+    .social-icons a:focus,
+    .social-icons a:hover {
+        color: #fff;
+        background-color: #29aafe
+    }
+    
+    .social-icons.size-sm a {
+        line-height: 34px;
+        height: 34px;
+        width: 34px;
+        font-size: 14px
+    }
+    
+    .social-icons a.instagram:hover {
+        background-color: #ea4c89
+    }
+    
+    @media (max-width:767px) {
+        .social-icons li.title {
+            display: block;
+            margin-right: 0;
+            font-weight: 600
+        }
+    }
+    /*
+    END FOOTER SECTION
+    */
     
     @media only screen and (max-width: 767px) {
+        #förklarings-ruta h6 {
+            font-size: 1.3em;
+        }
+        #förklarings-ruta p {
+            text-align: center !important;
+        }
         #calendar {
             margin-left: -.9em !important;
         }
@@ -851,12 +1059,24 @@
     }
     
     @media only screen and (max-width: 1300px) {
+        .site-footer a {
+            color: #000000 !important;
+        }
+        .site-footer a:hover {
+            color: #3e424d !important;
+        }
+        .site-footer i {
+            color: #ffffff !important;
+        }
         #startsida-container {
             text-align: center;
         }
         #cookie-container ul {
             text-decoration: none;
             list-style: none;
+        }
+        #cookie-container li {
+            font-size: 18px;
         }
         #cookie-container {
             margin-top: 150px;
@@ -866,8 +1086,15 @@
         #cookie-container h1 {
             font-size: 50px;
         }
+        #cookie-container a {
+            font-size: 15px;
+            color: rgb(103, 142, 197) !important;
+        }
         #cookie-container p {
-            text-align: center !important;
+            text-align: left !important;
+        }
+        #cookie-container button {
+            margin: 40px 0;
         }
         #förklarings-ruta {
             padding-top: 0px;
@@ -949,7 +1176,7 @@
             align-items: stretch !important;
         }
         p {
-            font-size: 14px;
+            font-family: 'Roboto Condensed', sans-serif;
         }
         .logo-img {
             margin-top: 75px;
